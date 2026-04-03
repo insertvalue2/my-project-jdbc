@@ -27,5 +27,5 @@ public class JdbcHello2 {
             e.printStackTrace();
         }
     }
-    // 디스코드 github 웹훅 연동 테스트 2
+    // 디스코드 github 웹훅 연동 테스트 3
 }
