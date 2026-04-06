@@ -16,7 +16,7 @@ public class Step1Statement {
             // 2. Statement 객체 필요 ( 문자열을 쿼리 객체로 변경 해 줌)
             // 3. ResultSet 객체 필요 (쿼리가 실행 되면 결과집합을 담고 있는 녀석)
             Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM product");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM product limit 3");
             System.out.println("==== 상품 목록 출력 ====");
             // rs.next() --> 다음 행이 존재 하는가? --> true , false
             while (rs.next()) {
