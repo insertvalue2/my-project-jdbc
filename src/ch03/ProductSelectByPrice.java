@@ -28,9 +28,10 @@ public class ProductSelectByPrice {
             pstmt.setInt(1, minPrice);
             pstmt.setInt(2, maxPrice);
             ResultSet rs = pstmt.executeQuery();
-
+            int count = 0;
             System.out.println("== 전체 상품 목록 조회");
             while (rs.next()) {
+                count++;
                 String output = """
                         ID: %3d | %-20s | %,7d원 | 재고 : %3d개
                         """.formatted(
@@ -42,6 +43,7 @@ public class ProductSelectByPrice {
                 // 참고로 텍스트 블록 문법은 자동으로 \n이 들어가 있다.
                 System.out.print(output);
             }
+            System.out.println(count + " 행의 결과를 받았습니다");
         } catch (SQLException e) {
             System.out.println("오류 : " + e.getMessage());
         }
